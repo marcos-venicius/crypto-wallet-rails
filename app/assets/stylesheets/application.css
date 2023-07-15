@@ -107,3 +107,13 @@ html {
     background-color: rgba(0, 255, 0, 0.05);
     color: #009300;
 }
+
+.dev_banner {
+    background: rgba(213, 0, 61, 0.25);
+    color: rgba(213, 0, 61, 1);
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform: rotate(45deg) translate(30%, -50%);
+    padding: 5px 50px;
+}
