@@ -1,3 +1,8 @@
 class WelcomeController < ApplicationController
-  def index; end
+  include WelcomeHelper
+  def index
+    return unless params.key? :name
+
+    @name = format_name params[:name]
+  end
 end

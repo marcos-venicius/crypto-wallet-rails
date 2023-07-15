@@ -1,4 +1,8 @@
-<h1>Seja bem vindo</h1>
+<% if @name.nil? %>
+  <h1>Seja bem vindo</h1>
+<% else %>
+  <h1>Seja bem vindo, <%= @name %></h1>
+<% end%>
 
 <strong style="margin: 1rem 0; display: block;"><pre>[<%= today_br %>]</pre></strong>
 
