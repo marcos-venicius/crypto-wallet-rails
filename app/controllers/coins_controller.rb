@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Coins Controller
 class CoinsController < ApplicationController
-  before_action :set_coin, only: %i[ show edit update destroy ]
+  before_action :set_coin, only: %i[show edit update destroy]
   add_flash_types :error
 
   # GET /coins or /coins.json
@@ -9,10 +12,10 @@ class CoinsController < ApplicationController
 
   # GET /coins/1 or /coins/1.json
   def show
-    if @coin.nil?
-      respond_to do |format|
-        format.html { redirect_to coins_url, error: "This coin was not found" }
-      end
+    return unless @coin.nil?
+
+    respond_to do |format|
+      format.html { redirect_to coins_url, error: 'This coin was not found' }
     end
   end
 
@@ -22,8 +25,7 @@ class CoinsController < ApplicationController
   end
 
   # GET /coins/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /coins or /coins.json
   def create
@@ -31,7 +33,7 @@ class CoinsController < ApplicationController
 
     respond_to do |format|
       if @coin.save
-        format.html { redirect_to coin_url(@coin), notice: "Coin was successfully created." }
+        format.html { redirect_to coin_url(@coin), notice: 'Coin was successfully created.' }
         format.json { render :show, status: :created, location: @coin }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -44,7 +46,7 @@ class CoinsController < ApplicationController
   def update
     respond_to do |format|
       if @coin.update(coin_params)
-        format.html { redirect_to coin_url(@coin), notice: "Coin was successfully updated." }
+        format.html { redirect_to coin_url(@coin), notice: 'Coin was successfully updated.' }
         format.json { render :show, status: :ok, location: @coin }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -58,17 +60,18 @@ class CoinsController < ApplicationController
     @coin.destroy
 
     respond_to do |format|
-      format.html { redirect_to coins_url, notice: "Coin was successfully destroyed." }
+      format.html { redirect_to coins_url, notice: 'Coin was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    def set_coin
-      @coin = Coin.find_by_id(params[:id])
-    end
 
-    def coin_params
-      params.require(:coin).permit(:description, :acronym, :url_image)
-    end
+  def set_coin
+    @coin = Coin.find_by_id(params[:id])
+  end
+
+  def coin_params
+    params.require(:coin).permit(:description, :acronym, :url_image)
+  end
 end
