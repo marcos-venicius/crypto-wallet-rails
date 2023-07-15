@@ -1,0 +1,23 @@
+<main class="wrapper">
+  <%= show_flash error, :error %>
+  <%= show_flash notice, :success %>
+
+  <div class="coin">
+    <div class="coin_head">
+      <% unless @coin.url_image.empty?  %>
+        <%= image_tag @coin.url_image, class: "coin_image" %>
+      <% end %>
+
+      <p><%= @coin.acronym %> - <%= @coin.description %></p>
+    </div>
+
+    <div class="links">
+      <%= link_to "Edit this coin", edit_coin_path(@coin), class: "link" %>
+      <%= button_to "Destroy this coin", @coin, method: :delete, class: "link" %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= link_to "Back to coins", coins_path, class: "link" %>
+  </div>
+</main>
