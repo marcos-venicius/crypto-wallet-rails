@@ -2,6 +2,8 @@
 
 # Coin model
 class Coin < ApplicationRecord
+  belongs_to :mining_type
+
   validates :description, presence: true, length: {
     minimum: 3,
     maximum: 200,
