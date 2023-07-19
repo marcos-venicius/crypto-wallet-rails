@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+def seed(model_name, data = [], &block)
+  puts "[SEEDING] #{model_name} - [STARTED]"
+
+  data.each do |element|
+    block.call(element)
+  end
+
+  puts "[SEEDING] #{model_name} - [FINISHED]"
+end
+
 COINS_DATA = [
   {
     description: 'Bitcoin',
@@ -18,10 +28,25 @@ COINS_DATA = [
   }
 ].freeze
 
-puts '[SEEDING] COINS - [STARTED]'
+MINING_TYPES_DATA = [
+  {
+    name: 'Proof of Work',
+    acronym: 'PoW'
+  },
+  {
+    name: 'Proof of Stake',
+    acronym: 'PoS'
+  },
+  {
+    name: 'Proof of Capacity',
+    acronym: 'PoC'
+  }
+].freeze
 
-COINS_DATA.each do |coin|
+seed 'COINS', COINS_DATA do |coin|
   Coin.find_or_create_by!(coin)
 end
 
-puts '[SEEDING] COINS - [FINISHED]'
+seed 'MINING TYPES', MINING_TYPES_DATA do |mining_type|
+  MiningType.find_or_create_by!(mining_type)
+end
