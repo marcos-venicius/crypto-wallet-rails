@@ -30,15 +30,15 @@ COINS_DATA = [
 
 MINING_TYPES_DATA = [
   {
-    name: 'Proof of Work',
+    description: 'Proof of Work',
     acronym: 'PoW'
   },
   {
-    name: 'Proof of Stake',
+    description: 'Proof of Stake',
     acronym: 'PoS'
   },
   {
-    name: 'Proof of Capacity',
+    description: 'Proof of Capacity',
     acronym: 'PoC'
   }
 ].freeze
