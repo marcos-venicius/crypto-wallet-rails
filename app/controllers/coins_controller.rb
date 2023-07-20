@@ -3,6 +3,7 @@
 # Coins Controller
 class CoinsController < ApplicationController
   before_action :set_coin, only: %i[show edit update destroy]
+  before_action :set_mining_type_options, only: %i[create new edit update]
   add_flash_types :error
 
   # GET /coins or /coins.json
@@ -66,6 +67,10 @@ class CoinsController < ApplicationController
   end
 
   private
+
+  def set_mining_type_options
+    @mining_type_options = MiningType.all.pluck(:description, :id)
+  end
 
   def set_coin
     @coin = Coin.find_by_id(params[:id])

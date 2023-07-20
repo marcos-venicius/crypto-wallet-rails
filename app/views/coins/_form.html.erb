@@ -28,7 +28,7 @@
 
   <div>
     <%= form.label :mining_type, style: "display: block" %>
-    <%= form.select("mining_type_id", MiningType.all.collect { |mining_type| [mining_type.description, mining_type.id] }, { include_blank: false }) %>
+    <%= form.select("mining_type_id", @mining_type_options, { include_blank: false }) %>
   </div>
 
   <div>
