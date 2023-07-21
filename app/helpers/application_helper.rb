@@ -6,16 +6,6 @@ module ApplicationHelper
     I18n.locale == :en ? 'US' : 'PT-BR'
   end
 
-  def today_br
-    date_us = Date.today
-
-    date_br(date_us)
-  end
-
-  def date_br(date_us)
-    date_us.strftime('%d/%m/%Y').chomp
-  end
-
   def application_name
     'Crypto Wallet'
   end

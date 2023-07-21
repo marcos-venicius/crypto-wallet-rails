@@ -4,7 +4,9 @@
   <h1>Seja bem vindo, <%= @name %></h1>
 <% end%>
 
-<strong style="margin: 1rem 0; display: block;"><pre>[<%= today_br %>]</pre></strong>
+<p><%= t 'hello' %></p>
+
+<strong style="margin: 1rem 0; display: block;"><pre>[<%= l Date.today %>]</pre></strong>
 
 <%= render "menu" %>
 
