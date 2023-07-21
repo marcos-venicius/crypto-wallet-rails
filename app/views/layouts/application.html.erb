@@ -13,5 +13,9 @@
   <body>
     <%= development_banner %>
     <%= yield %>
+
+    <footer>
+      <p>Idioma: <strong><%= current_locale %></strong></p>
+    </footer>
   </body>
 </html>

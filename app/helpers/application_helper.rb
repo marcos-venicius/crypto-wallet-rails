@@ -1,4 +1,11 @@
+# frozen_string_literal: true
+
+# Application helper
 module ApplicationHelper
+  def current_locale
+    I18n.locale == :en ? 'US' : 'PT-BR'
+  end
+
   def today_br
     date_us = Date.today
 
@@ -22,6 +29,6 @@ module ApplicationHelper
   def development_banner
     return unless Rails.env.development?
 
-    content_tag(:p, "development", class: "dev_banner")
+    content_tag(:p, 'development', class: 'dev_banner')
   end
 end
