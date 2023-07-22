@@ -6,3 +6,5 @@ pt-BR:
     show: 'Visualizar'
     delete: 'Apagar'
     new: 'Novo'
+
+  select_language: Selecione um idioma

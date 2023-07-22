@@ -6,3 +6,5 @@ en:
     show: 'Show'
     delete: 'Delete'
     new: 'New'
+
+  select_language: Select a language
