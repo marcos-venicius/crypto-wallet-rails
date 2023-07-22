@@ -1,24 +1,8 @@
-# README
+# Crypto Wallet
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**This is not a production ready app, the only purpose is to make tests and learn new things about rails**
 
-Things you may want to cover:
+## Important
 
-* Ruby version
+**Please, don't use this in production. It is not ready for it**
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
