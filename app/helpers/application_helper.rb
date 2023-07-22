@@ -2,10 +2,6 @@
 
 # Application helper
 module ApplicationHelper
-  def current_locale
-    I18n.locale == :en ? 'US' : 'PT-BR'
-  end
-
   def application_name
     'Crypto Wallet'
   end

@@ -1,4 +1,6 @@
 en:
+  current_locale: "EN - US"
+
   links:
     edit: 'Edit'
     show: 'Show'

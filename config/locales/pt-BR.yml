@@ -1,4 +1,6 @@
 pt-BR:
+  current_locale: "PT - BR"
+
   links:
     edit: 'Editar'
     show: 'Visualizar'
